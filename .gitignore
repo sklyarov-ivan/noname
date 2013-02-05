@@ -1,3 +1,4 @@
 www/application/cache/*
 www/application/logs/*
 www/_install.php
+nbproject/
