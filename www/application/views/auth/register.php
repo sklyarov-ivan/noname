@@ -17,7 +17,7 @@
                        
                         
                         <button type="submit" name="submit" class="btn btn-info btn-success">Registrate</button>
-                        or <a href ="<?php echo Kohana::$config->load('base')->get('base_link');?>">Back to main page</a>
+                        or <a href ="/">Back to main page</a>
                     </form>    
 		</div>
 	</div>

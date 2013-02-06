@@ -11,6 +11,7 @@
        <a class="brand" href="../">Bootswatch</a>
        <div class="nav-collapse" id="main-menu">
         <ul class="nav" id="main-menu-left">
+            <li><a id="swatch-link" href="/">Home</a></li>  
           <li><a onclick="pageTracker._link(this.href); return false;" href="http://news.bootswatch.com">News</a></li>
           <li><a id="swatch-link" href="/#gallery">Gallery</a></li>
           <li class="dropdown">
@@ -43,11 +44,23 @@
             </ul>
           </li>
         </ul>
-        <ul class="nav pull-right" id="main-menu-right">
-            <li><a rel="tooltip" target="_self" href="<?php echo Route::get('auth')->uri(array('action'=>'login'))?>" >Sign In<i class="icon-share-alt"></i></a></li>
-          <li><a rel="tooltip" target="_blank" href="http://builtwithbootstrap.com/" title="Showcase of Bootstrap sites &amp; apps" onclick="_gaq.push(['_trackEvent', 'click', 'outbound', 'builtwithbootstrap']);">Built With Bootstrap <i class="icon-share-alt"></i></a></li>
-          <li><a rel="tooltip" target="_blank" href="https://wrapbootstrap.com/?ref=bsw" title="Marketplace for premium Bootstrap templates" onclick="_gaq.push(['_trackEvent', 'click', 'outbound', 'wrapbootstrap']);">WrapBootstrap <i class="icon-share-alt"></i></a></li>
-        </ul>
+            <ul class="nav pull-right" id="main-menu-right">
+        <?php if (!Auth::instance()->logged_in()):?>
+                <li><a rel="tooltip" target="_self" href="<?php echo Route::get('auth')->uri(array('action'=>'register'))?>" >Sign Up<i class="icon-share-alt"></i></a></li>
+                <li><a rel="tooltip" target="_self" href="<?php echo Route::get('auth')->uri(array('action'=>'login'))?>" >Sign In<i class="icon-share-alt"></i></a></li>
+        <?php else:?>
+            <li  class="dropdown" id="preview-menu">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Welcome, <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a target="_self" href="<?php echo Route::get('user')->uri(array('controller'=>'account'))?>"><i class="icon-cog"></i>account</a></li>
+                  
+                  <li class="divider"></li>
+                  <li><a target="_self" href="<?php echo Route::get('auth')->uri(array('action'=>'logout'))?>"><i class="icon-share-alt"></i>logout</a></li>
+                </ul>
+            </li>
+        <?php endif;?>
+            </ul>
+            
        </div>
      </div>
    </div>

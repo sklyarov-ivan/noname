@@ -20,5 +20,13 @@ class Controller_Layouts extends Controller_Template {
         $this->template->content_left = array();
         $this->template->content_center = array();
         $this->template->content_right = array();
+        
+        $this->template->username = '';
+        if (Auth::instance()->logged_in())
+        {
+            $user = ORM::factory('user')->where('id', '=', Auth::instance()->get_user())->find();
+            $this->template->username = $user->username;
+        }
+        
     }
 }

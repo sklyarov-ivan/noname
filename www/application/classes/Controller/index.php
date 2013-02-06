@@ -6,13 +6,13 @@ class Controller_Index extends Controller_Layouts {
     {
         parent::before();
         $this->template->header[] = Widget::load('MainNavMenu');
-        $this->template->header[] = Widget::load('MainPageHeader');
+        
         
     }
     public function action_index()
     {
        
-        
+        $this->template->header[] = Widget::load('MainPageHeader');
         
     }
     

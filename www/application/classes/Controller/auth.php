@@ -16,7 +16,10 @@ class Controller_Auth extends Controller_Layouts {
            $data = Arr::extract($_POST, array('email', 'password', 'remember'));
            $status = Auth::instance()->login($data['email'], $data['password'], (bool) $data['remember']);
            if ($status)
+           {
                HTTP::redirect ('account');
+               
+           }
            else
                $errors = array(Kohana::message('auth/user','no_user'));
        }
@@ -34,10 +37,11 @@ class Controller_Auth extends Controller_Layouts {
         if(isset($_POST['submit']))
         {
             $data = Arr::extract($_POST, array('username','email','password','password_confirm'));
+            print_r($data);
             $users = ORM::factory('user');
             try
             {
-                $users->create_user($data, array(
+                $users->create_user($_POST, array(
                    'username',
                     'email',
                     'password',

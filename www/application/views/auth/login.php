@@ -19,7 +19,7 @@
                         </label>
                         
                         <button type="submit" name="submit" class="btn btn-info btn-success">Sign in</button>
-                        or <a href ="<?php echo '';?>">Back to main page</a>
+                        or <a href ="/">Back to main page</a>
                     </form>    
 		</div>
 	</div>
