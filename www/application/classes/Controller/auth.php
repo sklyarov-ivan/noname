@@ -2,14 +2,15 @@
 
 
 class Controller_Auth extends Controller_Layouts {
-    private $_auth;
+
     
     public function action_login()
     {
+       if (Auth::instance()->logged_in('admin'))
+           HTTP::redirect('admin');
        if (Auth::instance()->logged_in())
-       {
            HTTP::redirect('account');
-       }
+       
        
        if (isset($_POST['submit']))
        {

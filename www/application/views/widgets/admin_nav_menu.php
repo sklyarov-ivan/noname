@@ -1,7 +1,7 @@
 <!-- Navbar
     ================================================== -->
 
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container" style="width: auto;">
         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -9,12 +9,12 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <a class="brand" href="#">Project name</a>
+        <a class="brand" href="#">Admin pages</a>
         <div class="nav-collapse">
           <ul class="nav">
             <li class="active"><a href="/">Home</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
+            <li><a href="#">Galery</a></li>
+            <li><a href="#">Blog</a></li>
             <li><a href="#">Link</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>

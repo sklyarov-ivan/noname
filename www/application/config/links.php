@@ -10,6 +10,8 @@ return array(
                             'addition/js/bootstrap.min.js',
                             'addition/js/application.js',
                             'addition/js/bootswatch.js',
+                            'addition/js/link.js',
+                            'addition/js/auth.js',
                             
                             
         ),

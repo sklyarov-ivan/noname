@@ -112,7 +112,7 @@ Kohana::modules(array(
 	// 'cache'      => MODPATH.'cache',      // Caching with multiple backends
 	// 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
 	 'database'   => MODPATH.'database',   // Database access
-	// 'image'      => MODPATH.'image',      // Image manipulation
+	 'image'      => MODPATH.'image',      // Image manipulation
 	// 'minion'     => MODPATH.'minion',     // CLI Tasks
 	 'orm'        => MODPATH.'orm',        // Object Relationship Mapping
 	// 'unittest'   => MODPATH.'unittest',   // Unit testing
@@ -124,14 +124,23 @@ Kohana::modules(array(
  * defaults for the URI.
  */
 
-
-
+Cookie::$salt = 'asdf3434ne78rxner87b';
+Route::set('ajax','<directory>(/<controller>(/<action>(/<id>)))', array('directory'=>'ajax'))
+        ->defaults(array(
+            'action' =>  'index'
+        ));
 Route::set('user','<controller>(/<action>(/<id>))',array('controller'   =>  'account'))
         ->defaults(array(
                 'directory' =>  'user',
 		'controller' => 'account',
 		'action'     => 'index',
 	));
+Route::set('admin','admin(/<controller>(/<action>(/<id>)))')
+        ->defaults(array(
+            'directory'=>'admin',
+            'controller'=>'admin',
+            'action' =>  'index',
+        ));
 
 Route::set('auth','<action>', array('action' => 'login|logout|register'))
         ->defaults(array(
