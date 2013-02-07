@@ -1,3 +1,5 @@
+<?php print_r($user)?>
+
 <div class="container">
     <ul class="nav nav-tabs">
       <li class="active"><a href="#home" data-toggle="tab">Profile</a></li>
