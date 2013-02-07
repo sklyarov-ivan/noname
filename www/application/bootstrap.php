@@ -124,8 +124,11 @@ Kohana::modules(array(
  * defaults for the URI.
  */
 
-
-
+Cookie::$salt = 'asdf3434ne78rxner87b';
+Route::set('ajax','<directory>(/<controller>(/<action>(/<id>)))', array('directory'=>'ajax'))
+        ->defaults(array(
+            'action' =>  'index'
+        ));
 Route::set('user','<controller>(/<action>(/<id>))',array('controller'   =>  'account'))
         ->defaults(array(
                 'directory' =>  'user',

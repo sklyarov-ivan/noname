@@ -3,11 +3,17 @@
 
 class Controller_Layouts extends Controller_Template {
     public $template = 'layout';
-    
+    protected $_user;
+    protected $_auth;
+
+
     public function before() {
         parent::before();
-        $this->template->styles = Kohana::$config->load('links')->get('styles');
-        $this->template->scripts = Kohana::$config->load('links')->get('scripts');
+        $this->_auth = Auth::instance();
+        $this->_user = $this->_auth->get_user();
+        $settings = Kohana::$config->load('links');
+        $this->template->styles = $settings->get('styles');
+        $this->template->scripts = $settings->get('scripts');
         
         
         

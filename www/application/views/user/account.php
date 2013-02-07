@@ -7,13 +7,13 @@
       <div class="tab-pane active in" id="home">
         <form id="tab">
             <label>Username</label>
-            <input type="text" value="jsmith" class="input-xlarge">
+            <input type="text" value="<?php echo $user->username?>" class="input-xlarge">
             <label>First Name</label>
             <input type="text" value="John" class="input-xlarge">
             <label>Last Name</label>
             <input type="text" value="Smith" class="input-xlarge">
             <label>Email</label>
-            <input type="text" value="jsmith@yourcompany.com" class="input-xlarge">
+            <input type="text" value="<?php echo $user->email?>" class="input-xlarge">
             <label>Address</label>
             <textarea value="Smith" rows="3" class="input-xlarge">2817 S 49th
     Apt 314
